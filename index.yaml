@@ -3,6 +3,16 @@ entries:
   common:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2021-01-25T14:48:19.774708297Z"
+    description: A Helm chart for Kubernetes
+    digest: a151dcb6bf95f6871382521204254b9ed6ecbfb9cca4b3f6a3712fe4cc475664
+    name: common
+    type: application
+    urls:
+    - https://github.com/Vikaspogu/helm-charts/releases/download/common-1.0.1/common-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2021-01-15T20:03:23.546957882Z"
     description: A Helm chart for Kubernetes
     digest: 4e31db2bec8d8d87d7ae61ac6b6e0cfa4e037baeafaa98fa02fbccdc16be690a
