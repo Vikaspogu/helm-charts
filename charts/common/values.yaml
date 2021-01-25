@@ -25,8 +25,6 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name: ""
 
-podAnnotations: {}
-
 podSecurityContext: {}
   # fsGroup: 2000
 
@@ -63,6 +61,15 @@ livenessProbe:
 
 readinessProbe:
   path: "/"
+
+serviceMonitor:
+  enabled: false
+  additionalLabels: {}
+
+## Pod Annotations
+podAnnotations:
+  prometheus.io/scrape: "true"
+  prometheus.io/port: "http"
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
