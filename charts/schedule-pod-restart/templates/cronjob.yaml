@@ -6,8 +6,8 @@ metadata:
     {{- include "schedule-pod-restart.labels" . | nindent 4 }}
 spec:
   schedule: {{ .Values.cronjob.schedule | quote }}
-  successfulJobsHistoryLimit: {{.Values.successfulJobsHistoryLimit}}
-  failedJobsHistoryLimit: {{.Values.failedJobsHistoryLimit}}
+  successfulJobsHistoryLimit: {{.Values.cronjob.successfulJobsHistoryLimit}}
+  failedJobsHistoryLimit: {{.Values.cronjob.failedJobsHistoryLimit}}
   concurrencyPolicy: Forbid
   jobTemplate:
     spec:

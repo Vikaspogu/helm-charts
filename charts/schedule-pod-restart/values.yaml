@@ -20,10 +20,9 @@ role:
 
 cronjob:
   schedule: "0 0 * * *"
+  successfulJobsHistoryLimit: 5
+  failedJobsHistoryLimit: 5
   podLabels: []
-
-successfulJobsHistoryLimit: 5
-failedJobsHistoryLimit: 5
 
 image:
   tagname: ""
