@@ -20,9 +20,7 @@ role:
 
 cronjob:
   schedule: "0 0 * * *"
-  podLabels:
-    - app.kubernetes.io/name=radarr
-    - app.kubernetes.io/name=sonarr
+  podLabels: []
 
 image:
   tagname: ""
