@@ -22,5 +22,8 @@ cronjob:
   schedule: "0 0 * * *"
   podLabels: []
 
+successfulJobsHistoryLimit: 5
+failedJobsHistoryLimit: 5
+
 image:
   tagname: ""
