@@ -23,6 +23,23 @@ entries:
     version: 1.0.0
   schedule-pod-restart:
   - apiVersion: v2
+    created: "2021-01-30T19:53:16.085671466Z"
+    description: A Helm chart for automatically restarting pods with labels based on a cron schedule.
+    digest: 0269f3efc228f6c247cf5be4fd392314e9d682c2a20dbd98c85096a2851e3170
+    keywords:
+    - Kubernetes
+    - Operations
+    - Cronjob
+    maintainers:
+    - name: Vikas Pogu
+    name: schedule-pod-restart
+    sources:
+    - https://github.com/Vikaspogu/helm-charts.git
+    type: application
+    urls:
+    - https://github.com/Vikaspogu/helm-charts/releases/download/schedule-pod-restart-1.0.0/schedule-pod-restart-1.0.0.tgz
+    version: 1.0.0
+  - apiVersion: v2
     created: "2021-01-30T19:51:38.242462512Z"
     description: A Helm chart for automatically restarting pods with labels based on a cron schedule.
     digest: bdb48d910d64aa585f281831f5d774cbf024772c96be917b85ae3789eaf9838b
