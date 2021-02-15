@@ -21,6 +21,17 @@ entries:
     urls:
     - https://github.com/Vikaspogu/helm-charts/releases/download/common-1.0.0/common-1.0.0.tgz
     version: 1.0.0
+  motioneye:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2021-02-15T19:50:46.559873037Z"
+    description: A Helm chart to deploy motionEye in Kubernetes
+    digest: e90008bd567a2779649abb68ea38c33955af9907361d3b601ed7504c766450c6
+    name: motioneye
+    type: application
+    urls:
+    - https://github.com/Vikaspogu/helm-charts/releases/download/motioneye-1.0.0/motioneye-1.0.0.tgz
+    version: 1.0.0
   schedule-pod-restart:
   - apiVersion: v2
     created: "2021-01-30T19:53:16.085671466Z"
