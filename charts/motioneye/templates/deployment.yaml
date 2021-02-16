@@ -9,6 +9,8 @@ spec:
   selector:
     matchLabels:
       {{- include "motioneye.selectorLabels" . | nindent 6 }}
+  strategy:
+    type: {{.Values.deploymentStrategy.type }}
   template:
     metadata:
       labels:
