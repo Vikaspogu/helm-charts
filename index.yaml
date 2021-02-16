@@ -24,6 +24,16 @@ entries:
   motioneye:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2021-02-16T14:13:09.296078197Z"
+    description: A Helm chart to deploy motionEye in Kubernetes
+    digest: 7cac1b84b69db80d2136a6ba49e4bb38e6afa1a77fc2d00b95e9611107716da5
+    name: motioneye
+    type: application
+    urls:
+    - https://github.com/Vikaspogu/helm-charts/releases/download/motioneye-1.0.1/motioneye-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2021-02-15T19:50:46.559873037Z"
     description: A Helm chart to deploy motionEye in Kubernetes
     digest: e90008bd567a2779649abb68ea38c33955af9907361d3b601ed7504c766450c6
