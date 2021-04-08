@@ -20,6 +20,9 @@ envValueFrom:
 securityContext:
   privileged: true
 
+serviceMonitor:
+  enabled: false
+
 probes:
   liveness:
     custom: true
