@@ -1,7 +1,7 @@
 image:
-  repository: hello-world
+  repository: vikaspogu/node-ci-test
   pullPolicy: IfNotPresent
-  tag: latest
+  tag: "0.0.1"
 
 env:
   ENVIRONMENT: prod
