@@ -13,6 +13,13 @@ envValueFrom: {}
   #   fieldRef:
   #     fieldPath: spec.nodeName
 
+service:
+  enabled: true
+  type: ClusterIP
+  port: 8080
+  protocol: TCP
+  targetPort: 8080
+
 serviceMonitor:
   enabled: false
 
