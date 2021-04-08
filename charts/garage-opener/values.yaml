@@ -22,6 +22,32 @@ service:
 
 serviceMonitor:
   enabled: false
+  
+probes:
+  liveness:
+    custom: true
+    enabled: true
+    spec:
+      failureThreshold: 3
+      httpGet:
+        path: /health
+        port: http
+      initialDelaySeconds: 30
+      periodSeconds: 10
+      timeoutSeconds: 10
+  readiness:
+    custom: true
+    enabled: true
+    spec:
+      failureThreshold: 3
+      httpGet:
+        path: /health
+        port: http
+      initialDelaySeconds: 30
+      periodSeconds: 10
+      timeoutSeconds: 10
+  startup:
+    enabled: false
 
 ingress:
   enabled: false
