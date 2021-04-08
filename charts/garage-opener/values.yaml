@@ -1,5 +1,6 @@
 image:
-  repository: vikaspogu/ci-test-image ##Image for testing only
+  # Image for testing only
+  repository: vikaspogu/ci-test-image 
   pullPolicy: IfNotPresent
   tag: "0.0.1"
 
