@@ -34,10 +34,24 @@ spec:
       http:
         paths:
           {{- range .paths }}
-          - path: {{ .path }}
+          {{- if .pathTpl }}
+          - path: {{ tpl .pathTpl $ | quote }}
+          {{- else }}
+          - path: {{ .path | quote }}
+          {{- end }}
+            {{- if eq (include "library.capabilities.ingress.apiVersion" $) "networking.k8s.io/v1" }}
+            pathType: {{ default "Prefix" .pathType }}
+            {{- end }}
             backend:
+            {{- if eq (include "library.capabilities.ingress.apiVersion" $) "networking.k8s.io/v1" }}
+              service:
+                name: {{ $svcName }}
+                port:
+                  number: {{ $svcPort }}
+            {{- else }}
               serviceName: {{ $svcName }}
               servicePort: {{ $svcPort }}
+            {{- end }}
           {{- end }}
     {{- end }}
 {{- end }}

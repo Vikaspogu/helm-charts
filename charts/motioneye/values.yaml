@@ -94,7 +94,9 @@ ingress:
   # ingress.hosts -- list of hosts and their paths that ingress controller should repsond to.
   hosts:
     - host: chart-example.local
-      paths: []
+      paths: 
+        - path: /
+          pathType: Prefix
   # ingress.tls -- list of TLS configurations
   tls: []
   #  - secretName: chart-example-tls
