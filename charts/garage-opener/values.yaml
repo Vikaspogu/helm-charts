@@ -1,8 +1,8 @@
 image:
   # Image for testing only
-  repository: vikaspogu/ci-test-image 
+  repository: hello-world 
   pullPolicy: IfNotPresent
-  tag: "0.0.1"
+  tag: latest
 
 imagePullSecrets: []
 
