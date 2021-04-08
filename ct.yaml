@@ -1,7 +1,7 @@
 chart-dirs:
   - charts
   
-exclude-charts:
+excluded-charts:
   - library
 
 chart-yaml-schema: chart-schema.yaml

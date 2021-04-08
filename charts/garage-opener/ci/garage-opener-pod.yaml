@@ -1,24 +1,13 @@
 image:
-  repository: harbor.homenet.vikaspogu.com/homelab/garage-opener
+  repository: vikaspogu/garage-opener
   pullPolicy: IfNotPresent
-  tag: "sha256:f70e73fa"
-
-imagePullSecrets:
-  - name: harbor-registry-secret
+  tag: "sha-d1dd658"
 
 env:
   ENVIRONMENT: prod
   MQTT_BROKER: vernemq.default.svc.cluster.local
   OPEN_PIN: "12"
   NOTIFICATION_TIME: "1800000"
-envValueFrom:
-  SLACK_WEBHOOK:
-    secretKeyRef:
-      key: SLACK_WEBHOOK
-      name: garage-credentials
-
-securityContext:
-  privileged: true
 
 serviceMonitor:
   enabled: false
@@ -67,13 +56,7 @@ ingress:
     - secretName: garage-opener-tls
       hosts:
         - garage-opener.homenet.vikaspogu.com
-volumes:
-  - name: dev-gpiomem
-    hostPath:
-      path: /dev/gpiomem
-volumeMounts:
-  - mountPath: /dev/gpiomem
-    name: dev-gpiomem
+
 resources:
   limits:
     cpu: 520m

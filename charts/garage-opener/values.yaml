@@ -14,10 +14,12 @@ envValueFrom:
     secretKeyRef:
       key: SLACK_WEBHOOK
       name: garage-credentials
+      
 securityContext:
   privileged: true
+
 serviceMonitor:
-  enabled: true
+  enabled: false
 
 probes:
   liveness:
