@@ -6,8 +6,6 @@ labels: {}
 replicas: 1
 strategy:
   ## For Deployments, valid values are Recreate and RollingUpdate
-  ## For StatefulSets, valid values are OnDelete and RollingUpdate
-  ## DaemonSets ignore this
   type: RollingUpdate
 
 # Override the default command
