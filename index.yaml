@@ -21,7 +21,50 @@ entries:
     urls:
     - https://github.com/Vikaspogu/helm-charts/releases/download/common-1.0.0/common-1.0.0.tgz
     version: 1.0.0
+  garage-opener:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-04-08T23:17:12.907307899Z"
+    dependencies:
+    - name: library
+      repository: file://../library
+      version: .x.x
+    description: This is garage-opener chart for my home
+    digest: f8c8551d07e4a730d52bc921f2ea70a736baf78ec9e752e6db5485c24ad74827
+    name: garage-opener
+    type: application
+    urls:
+    - https://github.com/Vikaspogu/helm-charts/releases/download/garage-opener-2.0.0/garage-opener-2.0.0.tgz
+    version: 2.0.0
+  library:
+  - apiVersion: v2
+    created: "2021-04-08T23:17:12.979663716Z"
+    description: Function library for helm charts
+    digest: 26e2af6d3e172294cf8059f502965ed4d2104789e137b94ee3d80c04a3df10e2
+    home: https://github.com/Vikaspogu/helm-charts/charts/library
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - name: vikaspogu
+    name: library
+    type: library
+    urls:
+    - https://github.com/Vikaspogu/helm-charts/releases/download/library-1.0.0/library-1.0.0.tgz
+    version: 1.0.0
   motioneye:
+  - apiVersion: v2
+    appVersion: 2.0.0
+    created: "2021-04-08T23:17:13.080102235Z"
+    dependencies:
+    - name: library
+      repository: file://../library
+      version: 1.x.x
+    description: A Helm chart to deploy motionEye in Kubernetes
+    digest: c37d56de5337dae169770a67b8eeea1c57367d4c9fa56c7f5da47c95dad1e147
+    name: motioneye
+    type: application
+    urls:
+    - https://github.com/Vikaspogu/helm-charts/releases/download/motioneye-2.0.0/motioneye-2.0.0.tgz
+    version: 2.0.0
   - apiVersion: v2
     appVersion: 1.0.0
     created: "2021-02-16T14:13:09.296078197Z"
