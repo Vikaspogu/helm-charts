@@ -57,11 +57,3 @@ ingress:
       hosts:
         - garage-opener.homenet.vikaspogu.com
 
-additionalVolumes:
-  - name: dev-gpiomem
-    hostPath:
-      path: /dev/gpiomem
-
-additionalVolumeMounts:
-  - mountPath: /dev/gpiomem
-    name: dev-gpiomem
