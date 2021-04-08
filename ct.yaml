@@ -1,9 +1,5 @@
 chart-dirs:
   - charts
-  
-exclude-charts:
-  - schedule-pod-restart
-  - library
 
 chart-yaml-schema: chart-schema.yaml
 

@@ -2,8 +2,10 @@ image:
   repository: harbor.homenet.vikaspogu.com/homelab/garage-opener
   pullPolicy: IfNotPresent
   tag: "sha256:f70e73fa"
+
 imagePullSecrets:
   - name: harbor-registry-secret
+
 env:
   ENVIRONMENT: prod
   MQTT_BROKER: vernemq.default.svc.cluster.local
@@ -14,8 +16,10 @@ envValueFrom:
     secretKeyRef:
       key: SLACK_WEBHOOK
       name: garage-credentials
+
 securityContext:
   privileged: true
+
 serviceMonitor:
   enabled: true
 
@@ -31,6 +35,7 @@ probes:
       initialDelaySeconds: 30
       periodSeconds: 10
       timeoutSeconds: 10
+
   readiness:
     custom: true
     enabled: true
@@ -42,6 +47,7 @@ probes:
       initialDelaySeconds: 30
       periodSeconds: 10
       timeoutSeconds: 10
+      
   startup:
     enabled: false
 
@@ -75,12 +81,3 @@ resources:
   requests:
     cpu: 250m
     memory: 250Mi
-affinity:
-  nodeAffinity:
-    requiredDuringSchedulingIgnoredDuringExecution:
-      nodeSelectorTerms:
-        - matchExpressions:
-            - key: kubernetes.io/hostname
-              operator: In
-              values:
-                - pi4-garage

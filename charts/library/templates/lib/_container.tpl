@@ -76,17 +76,17 @@ The main container included in the controller.
   {{- end }}
   {{- range $probeName, $probe := .Values.probes }}
   {{- if $probe.enabled -}}
-    {{- "" | nindent 0 }}
+    {{- "" | nindent 2 }}
     {{- $probeName }}Probe:
     {{- if $probe.custom -}}
-      {{- $probe.spec | toYaml | nindent 2 }}  
+      {{- $probe.spec | toYaml | nindent 4 }}  
     {{- else }}
-      {{- "tcpSocket:" | nindent 2 }}
-        {{- printf "port: %v" $svcPort  | nindent 4 }}
-      {{- printf "initialDelaySeconds: %v" $probe.spec.initialDelaySeconds  | nindent 2 }}
-      {{- printf "failureThreshold: %v" $probe.spec.failureThreshold  | nindent 2 }}
-      {{- printf "timeoutSeconds: %v" $probe.spec.timeoutSeconds  | nindent 2 }}
-      {{- printf "periodSeconds: %v" $probe.spec.periodSeconds | nindent 2 }}
+      {{- "tcpSocket:" | nindent 4 }}
+        {{- printf "port: %v" $svcPort  | nindent 6 }}
+      {{- printf "initialDelaySeconds: %v" $probe.spec.initialDelaySeconds  | nindent 4 }}
+      {{- printf "failureThreshold: %v" $probe.spec.failureThreshold  | nindent 4 }}
+      {{- printf "timeoutSeconds: %v" $probe.spec.timeoutSeconds  | nindent 4 }}
+      {{- printf "periodSeconds: %v" $probe.spec.periodSeconds | nindent 4 }}
     {{- end }}
   {{- end }}
   {{- end }}
