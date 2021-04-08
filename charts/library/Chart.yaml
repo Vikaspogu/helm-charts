@@ -1,0 +1,9 @@
+apiVersion: v2
+name: library
+description: Function library for helm charts
+type: library
+version: 1.0.0
+kubeVersion: ">=1.16.0-0"
+home: https://github.com/Vikaspogu/helm-charts/charts/library
+maintainers:
+- name: vikaspogu

@@ -2,5 +2,9 @@ apiVersion: v2
 name: motioneye
 description: A Helm chart to deploy motionEye in Kubernetes
 type: application
-version: 1.0.1
-appVersion: 1.0.0
+version: 2.0.0
+appVersion: 2.0.0
+dependencies:
+- name: library
+  repository: file://../library
+  version: 1.x.x
