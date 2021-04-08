@@ -1,7 +1,7 @@
 image:
-  repository: vikaspogu/garage-opener
+  repository: vikaspogu/ci-test-image ##Image for testing only
   pullPolicy: IfNotPresent
-  tag: "sha-d1dd658"
+  tag: "0.0.1"
 
 imagePullSecrets: []
 
