@@ -57,10 +57,11 @@ ingress:
       hosts:
         - garage-opener.homenet.vikaspogu.com
 
-resources:
-  limits:
-    cpu: 520m
-    memory: 520Mi
-  requests:
-    cpu: 250m
-    memory: 250Mi
+additionalVolumes:
+  - name: dev-gpiomem
+    hostPath:
+      path: /dev/gpiomem
+
+additionalVolumeMounts:
+  - mountPath: /dev/gpiomem
+    name: dev-gpiomem
