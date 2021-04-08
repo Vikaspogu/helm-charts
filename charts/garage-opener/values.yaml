@@ -1,0 +1,83 @@
+image:
+  # Image for testing only
+  repository: vikaspogu/node-ci-test
+  pullPolicy: IfNotPresent
+  tag: "0.0.1"
+
+imagePullSecrets: []
+
+env: {}
+  # ENVIRONMENT: prod
+
+envValueFrom: {}
+  # NODE_NAME:
+  #   fieldRef:
+  #     fieldPath: spec.nodeName
+
+service:
+  enabled: true
+  type: ClusterIP
+  port: 8080
+  protocol: TCP
+  targetPort: 8080
+
+serviceMonitor:
+  enabled: false
+  
+probes:
+  liveness:
+    custom: true
+    enabled: true
+    spec:
+      failureThreshold: 3
+      httpGet:
+        path: /health
+        port: http
+      initialDelaySeconds: 30
+      periodSeconds: 10
+      timeoutSeconds: 10
+  readiness:
+    custom: true
+    enabled: true
+    spec:
+      failureThreshold: 3
+      httpGet:
+        path: /health
+        port: http
+      initialDelaySeconds: 30
+      periodSeconds: 10
+      timeoutSeconds: 10
+  startup:
+    enabled: false
+
+ingress:
+  enabled: false
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  labels: {}
+  # ingressClassName: "nginx"
+  hosts:
+    - host: chart-example.local
+      ## Or a tpl that is evaluated
+      # hostTpl: '{{ include "common.names.fullname" . }}.{{ .Release.Namespace }}.{{ .Values.ingress.domainname }}'
+      paths:
+        - path: /
+          ## Or a tpl that is evaluated
+          # pathTpl: '{{ include "common.names.fullname" . }}'
+          ## Ignored if not kubeVersion >= 1.14-0
+          pathType: Prefix
+  tls: []
+
+additionalVolumes:
+  - name: dev-gpiomem
+    hostPath:
+      path: /dev/gpiomem
+
+additionalVolumeMounts:
+  - mountPath: /dev/gpiomem
+    name: dev-gpiomem
+
+resources: {}
+
+affinity: {}

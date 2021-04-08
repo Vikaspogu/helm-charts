@@ -1,0 +1,11 @@
+chart-dirs:
+  - charts
+  
+excluded-charts:
+  - library
+
+chart-yaml-schema: chart-schema.yaml
+
+lint-conf: lint-conf.yaml
+
+validate-maintainers: false

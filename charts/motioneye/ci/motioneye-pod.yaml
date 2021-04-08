@@ -1,0 +1,68 @@
+image:
+  repository: ccrisan/motioneye
+  tag: 0.42-amd64
+  pullPolicy: IfNotPresent
+
+persistence:
+  config:
+    enabled: true
+    accessMode: ReadWriteOnce
+    size: 8Gi
+
+  data:
+    enabled: true
+    existingClaim:   
+    accessMode: ReadWriteOnce  
+    size: 24Gi
+    annotations: {}
+
+probes:
+  liveness:
+    custom: true
+    enabled: true
+    spec:
+      failureThreshold: 3
+      httpGet:
+        path: /
+        port: http
+      initialDelaySeconds: 30
+      periodSeconds: 10
+      timeoutSeconds: 10
+
+  readiness:
+    custom: true
+    enabled: true
+    spec:
+      failureThreshold: 3
+      httpGet:
+        path: /
+        port: http
+      initialDelaySeconds: 30
+      periodSeconds: 10
+      timeoutSeconds: 10
+      
+  startup:
+    enabled: false
+
+service:
+  enabled: true
+  type: ClusterIP
+  port: 80
+  targetPort: 8765
+
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/auth-url: "https://auth.homenet.vikaspogu.com/oauth2/auth"
+    nginx.ingress.kubernetes.io/auth-signin: "https://auth.homenet.vikaspogu.com/oauth2/start?rd=https%3A%2F%2F$host$request_uri"
+  hosts:
+    - host: motioneye.homenet.vikaspogu.com
+      paths:
+        - path: /
+          pathType: Prefix
+  tls:
+    - secretName: motioneye-tls
+      hosts:
+        - motioneye.homenet.vikaspogu.com
