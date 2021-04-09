@@ -1,0 +1,9 @@
+serviceAccount:
+  create: true
+  name: "operations-pod-restart"
+cronjob:
+  schedule: "*/2 * * * *"
+  podLabels:
+    - app.kubernetes.io/name=test-app
+image:
+  tagname: "1.20.2"

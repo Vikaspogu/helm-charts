@@ -5,11 +5,11 @@ Your release is named {{ .Release.Name }}.
 Following resources were created in namespace {{ .Release.Namespace }}:
 - Service account {{ .Values.serviceAccount.name }}
 - Role binding {{ .Values.bindings.role.name }} for the service account to role {{ .Values.role.name }}
-- Cronjob {{ include "schedule-pod-restart.name" . }}
+- Cronjob {{ include "library.names.name" . }}
 
 Looking for the Kubernetes cronjob? Run this command!
 
-> kubectl get cronjob {{ include "schedule-pod-restart.name" . }} --namespace={{ .Release.Namespace }}
+> kubectl get cronjob {{ include "library.names.name" . }} --namespace={{ .Release.Namespace }}
 
 The cronjob will execute the below command in the cron interval {{ .Values.cronjob.schedule | quote }}
 

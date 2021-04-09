@@ -1,9 +1,9 @@
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
-  name: {{ include "schedule-pod-restart.name" . }}
+  name: {{ include "library.names.name" . }}
   labels:
-    {{- include "schedule-pod-restart.labels" . | nindent 4 }}
+    {{- include "library.labels" . | nindent 4 }}
 spec:
   schedule: {{ .Values.cronjob.schedule | quote }}
   successfulJobsHistoryLimit: {{.Values.cronjob.successfulJobsHistoryLimit}}
@@ -16,7 +16,7 @@ spec:
           serviceAccountName: {{ include "schedule-pod-restart.serviceAccountName" . }}
           containers:
           - name: kubectl-container
-            image: bitnami/kubectl:{{ include "schedule-pod-restart.imageTag" . }}
+            image: bitnami/kubectl:{{ .Values.image.tagname }}
             imagePullPolicy: IfNotPresent
             command:
             - /bin/sh

@@ -1,7 +1,6 @@
 image:
   repository: ccrisan/motioneye
   tag: 0.42-amd64
-  pullPolicy: IfNotPresent
 
 persistence:
   config:
@@ -40,15 +39,9 @@ probes:
       initialDelaySeconds: 30
       periodSeconds: 10
       timeoutSeconds: 10
-      
+
   startup:
     enabled: false
-
-service:
-  enabled: true
-  type: ClusterIP
-  port: 80
-  targetPort: 8765
 
 ingress:
   enabled: true
