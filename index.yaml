@@ -24,6 +24,20 @@ entries:
   garage-opener:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2021-04-09T00:18:08.660549775Z"
+    dependencies:
+    - name: library
+      repository: file://../library
+      version: .x.x
+    description: This is garage-opener chart for my home
+    digest: e9df6b43c82e1dd577ae08cb01289bf8290d006bd3b0c9f4669df77380529a29
+    name: garage-opener
+    type: application
+    urls:
+    - https://github.com/Vikaspogu/helm-charts/releases/download/garage-opener-2.0.1/garage-opener-2.0.1.tgz
+    version: 2.0.1
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2021-04-08T23:17:12.907307899Z"
     dependencies:
     - name: library
