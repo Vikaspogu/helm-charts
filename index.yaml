@@ -24,6 +24,20 @@ entries:
   garage-opener:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2021-04-09T17:41:00.302927763Z"
+    dependencies:
+    - name: library
+      repository: file://../library
+      version: .x.x
+    description: This is garage-opener chart for my home
+    digest: 92e32a09634b24c05178838fafb53671bee2328cf3b947c4a9778a6cd5009462
+    name: garage-opener
+    type: application
+    urls:
+    - https://github.com/Vikaspogu/helm-charts/releases/download/garage-opener-2.0.2/garage-opener-2.0.2.tgz
+    version: 2.0.2
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2021-04-09T00:18:08.660549775Z"
     dependencies:
     - name: library
@@ -67,6 +81,20 @@ entries:
   motioneye:
   - apiVersion: v2
     appVersion: 2.0.0
+    created: "2021-04-09T17:41:00.524517777Z"
+    dependencies:
+    - name: library
+      repository: file://../library
+      version: 1.x.x
+    description: A Helm chart to deploy motionEye in Kubernetes
+    digest: 4642a2481bcbb491fcd9af6f35db03740308355acc9d1e3ee27a7fb1815e43db
+    name: motioneye
+    type: application
+    urls:
+    - https://github.com/Vikaspogu/helm-charts/releases/download/motioneye-2.0.1/motioneye-2.0.1.tgz
+    version: 2.0.1
+  - apiVersion: v2
+    appVersion: 2.0.0
     created: "2021-04-08T23:17:13.080102235Z"
     dependencies:
     - name: library
@@ -100,6 +128,26 @@ entries:
     - https://github.com/Vikaspogu/helm-charts/releases/download/motioneye-1.0.0/motioneye-1.0.0.tgz
     version: 1.0.0
   schedule-pod-restart:
+  - apiVersion: v2
+    created: "2021-04-09T17:41:00.631591061Z"
+    dependencies:
+    - name: library
+      repository: file://../library
+      version: 1.x.x
+    description: A Helm chart for automatically restarting pods with labels based on a cron schedule.
+    digest: a8d9bfeeea89c7cb64e3cbe239d351c477891c3d084a8c5db24d7cad09c32b38
+    keywords:
+    - Kubernetes
+    - Cronjob
+    maintainers:
+    - name: Vikas Pogu
+    name: schedule-pod-restart
+    sources:
+    - https://github.com/Vikaspogu/helm-charts/tree/master/charts/schedule-pod-restart
+    type: application
+    urls:
+    - https://github.com/Vikaspogu/helm-charts/releases/download/schedule-pod-restart-2.0.0/schedule-pod-restart-2.0.0.tgz
+    version: 2.0.0
   - apiVersion: v2
     created: "2021-03-04T14:16:31.815539935Z"
     description: A Helm chart for automatically restarting pods with labels based on a cron schedule.
