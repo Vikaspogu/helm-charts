@@ -2,6 +2,12 @@ motionEye
 =========
 A Helm chart to deploy [motionEye](https://github.com/ccrisan/motioneye/wiki) in Kubernetes
 
+## Dependencies
+
+| Repository | Name | Version |
+|------------|------|---------|
+| https://github.com/Vikaspogu/helm-charts/tree/master/charts/library | library | 1.0.0 |
+
 ## Install
 
 Using [Helm](https://helm.sh), you can easily install and test motionEye in a 
@@ -21,9 +27,6 @@ helm upgrade --install \
   vikaspogu/motioneye \
   --set image.tag=0.42-armhf
 ```
-
-#### Knonw Limitations
-- This chart currently does not support GPU resources
 
 ## Chart Values
 
