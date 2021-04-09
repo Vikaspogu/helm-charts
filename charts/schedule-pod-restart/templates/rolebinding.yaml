@@ -3,7 +3,7 @@ kind: RoleBinding
 metadata:
   name: {{ include "schedule-pod-restart.roleBinding" . }}
   labels:
-    {{- include "schedule-pod-restart.labels" . | nindent 4 }}
+    {{- include "library.labels" . | nindent 4 }}
 roleRef:
   apiGroup: ""
   kind: Role

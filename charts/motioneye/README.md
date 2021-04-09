@@ -1,6 +1,16 @@
-motionEye
-=========
-A Helm chart to deploy [motionEye](https://github.com/ccrisan/motioneye/wiki) in Kubernetes
+# motioneye
+
+![Version: 2.0.0](https://img.shields.io/badge/Version-2.0.0-informational?style=flat-square) ![AppVersion: v2.0.0](https://img.shields.io/badge/AppVersion-v2.0.0-informational?style=flat-square)
+
+Garage opener application for home
+
+## Source Code
+
+* <https://github.com/vikaspogu/motioneye>
+
+## Requirements
+
+Kubernetes: `>=1.16.0-0`
 
 ## Dependencies
 
@@ -8,25 +18,54 @@ A Helm chart to deploy [motionEye](https://github.com/ccrisan/motioneye/wiki) in
 |------------|------|---------|
 | https://github.com/Vikaspogu/helm-charts/tree/master/charts/library | library | 1.0.0 |
 
-## Install
+## TL;DR
 
-Using [Helm](https://helm.sh), you can easily install and test motionEye in a 
-Kubernetes cluster by running the following:
-
-#### amd64
-```bash
-helm upgrade --install \
-  my-release
-  vikaspogu/motioneye
+```console
+helm repo add vikaspogu https://vikaspogu.dev/helm-charts/
+helm repo update
+helm install motioneye vikaspogu/motioneye
 ```
 
-#### armhf (RaspberryPi)
-```bash
-helm upgrade --install \
-  my-release
-  vikaspogu/motioneye \
-  --set image.tag=0.42-armhf
+## Installing the Chart
+
+To install the chart with the release name `motioneye`
+
+```console
+helm install motioneye vikaspogu/motioneye
 ```
+
+## Uninstalling the Chart
+
+To uninstall the `motioneye` deployment
+
+```console
+helm uninstall motioneye
+```
+
+The command removes all the Kubernetes components associated with the chart **including persistent volumes** and deletes the release.
+
+## Configuration
+
+Read through the [values.yaml](./values.yaml) file. It has several commented out suggested values.
+Other values may be used from the [values.yaml](https://github.com/Vikaspogu/helm-charts/blob/master/charts/library/values.yaml) from the [common library](https://github.com/Vikaspogu/helm-charts/tree/master/charts/library).
+
+Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`.
+
+```console
+helm install motioneye \
+  --set env.TZ="America/New York" --set image.tag=0.42-armhf \
+    vikaspogu/motioneye
+```
+
+Alternatively, a YAML file that specifies the values for the above parameters can be provided while installing the chart.
+
+```console
+helm install motioneye vikaspogu/motioneye -f values.yaml
+```
+
+## Custom configuration
+
+N/A
 
 ## Chart Values
 

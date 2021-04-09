@@ -1,8 +1,8 @@
 image:
   # Image for testing only
-  repository: vikaspogu/node-ci-test
+  repository: harbor.homenet.vikaspogu.com/homelab/garage-opener
   pullPolicy: IfNotPresent
-  tag: "0.0.1"
+  tag: "18075de"
 
 imagePullSecrets: []
 
@@ -23,32 +23,6 @@ service:
 
 serviceMonitor:
   enabled: false
-  
-probes:
-  liveness:
-    custom: true
-    enabled: true
-    spec:
-      failureThreshold: 3
-      httpGet:
-        path: /health
-        port: http
-      initialDelaySeconds: 30
-      periodSeconds: 10
-      timeoutSeconds: 10
-  readiness:
-    custom: true
-    enabled: true
-    spec:
-      failureThreshold: 3
-      httpGet:
-        path: /health
-        port: http
-      initialDelaySeconds: 30
-      periodSeconds: 10
-      timeoutSeconds: 10
-  startup:
-    enabled: false
 
 ingress:
   enabled: false
