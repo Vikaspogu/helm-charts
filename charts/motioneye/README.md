@@ -6,7 +6,7 @@ Garage opener application for home
 
 ## Source Code
 
-* <https://github.com/vikaspogu/motioneye>
+* <https://github.com/Vikaspogu/helm-charts/tree/master/charts/motioneye>
 
 ## Requirements
 

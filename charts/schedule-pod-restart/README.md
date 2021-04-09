@@ -2,6 +2,20 @@
 
 Automatically restarting pods with labels based on a cron schedule.
 
+## Source Code
+
+* <https://github.com/Vikaspogu/helm-charts/tree/master/charts/schedule-pod-restart>
+
+## Requirements
+
+Kubernetes: `>=1.16.0-0`
+
+## Dependencies
+
+| Repository | Name | Version |
+|------------|------|---------|
+| https://github.com/Vikaspogu/helm-charts/tree/master/charts/library | library | 1.0.0 |
+
 ## TL;DR
 
 ```console
@@ -10,14 +24,12 @@ helm repo update
 helm install schedule-pod-restart vikaspogu/schedule-pod-restart
 ```
 
-## Introduction
-
 ## Installing the Chart
 
-To install the chart with the release name `schedule-pod-restart`:
+To install the chart with the release name `schedule-pod-restart`
 
 ```console
-$ helm install schedule-pod-restart coditeu/schedule-pod-restart --set cronjob.schedule="0 1 * * *" --set cronjob.podLabels="app=example"
+helm install schedule-pod-restart vikaspogu/schedule-pod-restart
 ```
 
 ## Uninstalling the Chart
