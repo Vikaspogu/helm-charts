@@ -11,7 +11,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      {{- include "common.labels.selectorLabels" . | nindent 6 }}
+      {{- include "library.labels.selectorLabels" . | nindent 6 }}
   endpoints:
   - port: http
     interval: 30s
