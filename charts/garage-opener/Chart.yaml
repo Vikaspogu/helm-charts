@@ -7,4 +7,4 @@ appVersion: 1.16.0
 dependencies:
 - name: library
   repository: file://../library
-  version: .x.x
+  version: x.x.x

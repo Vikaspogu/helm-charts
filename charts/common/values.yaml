@@ -1,7 +1,3 @@
-# Default values for common.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-
 replicaCount: 1
 
 image:
@@ -11,72 +7,53 @@ image:
   tag: ""
 
 imagePullSecrets: []
-nameOverride: ""
-fullnameOverride: ""
 
-serviceAccount:
-  # Specifies whether a service account should be created
-  create: true
-  # Annotations to add to the service account
-  annotations: {}
-  # The name of the service account to use.
-  # If not set and create is true, a name is generated using the fullname template
-  name: ""
+env: {}
+  # ENVIRONMENT: prod
 
-podAnnotations: {}
-
-podSecurityContext: {}
-  # fsGroup: 2000
-
-securityContext: {}
-  # capabilities:
-  #   drop:
-  #   - ALL
-  # readOnlyRootFilesystem: true
-  # runAsNonRoot: true
-  # runAsUser: 1000
+envValueFrom: {}
+  # NODE_NAME:
+  #   fieldRef:
+  #     fieldPath: spec.nodeName
 
 service:
+  enabled: true
   type: ClusterIP
-  port: 80
+  port: 8080
+  protocol: TCP
+  targetPort: 8080
+
+serviceMonitor:
+  enabled: false
 
 ingress:
   enabled: false
-  className: ""
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
+  labels: {}
+  # ingressClassName: "nginx"
   hosts:
     - host: chart-example.local
+      ## Or a tpl that is evaluated
+      # hostTpl: '{{ include "common.names.fullname" . }}.{{ .Release.Namespace }}.{{ .Values.ingress.domainname }}'
       paths:
         - path: /
-          pathType: ImplementationSpecific
+          ## Or a tpl that is evaluated
+          # pathTpl: '{{ include "common.names.fullname" . }}'
+          ## Ignored if not kubeVersion >= 1.14-0
+          pathType: Prefix
   tls: []
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
+
+additionalVolumes:
+  - name: dev-gpiomem
+    hostPath:
+      path: /dev/gpiomem
+
+additionalVolumeMounts:
+  - mountPath: /dev/gpiomem
+    name: dev-gpiomem
 
 resources: {}
-  # We usually recommend not to specify default resources and to leave this as a conscious
-  # choice for the user. This also increases chances charts run on environments with little
-  # resources, such as Minikube. If you do want to specify resources, uncomment the following
-  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
-  # limits:
-  #   cpu: 100m
-  #   memory: 128Mi
-  # requests:
-  #   cpu: 100m
-  #   memory: 128Mi
-
-autoscaling:
-  enabled: false
-  minReplicas: 1
-  maxReplicas: 100
-  targetCPUUtilizationPercentage: 80
-  # targetMemoryUtilizationPercentage: 80
-
-nodeSelector: {}
-
-tolerations: []
 
 affinity: {}
