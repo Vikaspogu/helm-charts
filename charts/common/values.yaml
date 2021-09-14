@@ -45,14 +45,9 @@ ingress:
           pathType: Prefix
   tls: []
 
-additionalVolumes:
-  - name: dev-gpiomem
-    hostPath:
-      path: /dev/gpiomem
+additionalVolumes: []
 
-additionalVolumeMounts:
-  - mountPath: /dev/gpiomem
-    name: dev-gpiomem
+additionalVolumeMounts: []
 
 resources: {}
 
