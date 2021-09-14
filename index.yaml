@@ -3,6 +3,20 @@ entries:
   common:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2021-09-14T13:48:40.734687347Z"
+    dependencies:
+    - name: library
+      repository: file://../library
+      version: x.x.x
+    description: This is common chart for my home deployment
+    digest: 662f562484037bbfb73f1387b828092db509f2d299697a2735e68e0cc01772b7
+    name: common
+    type: application
+    urls:
+    - https://github.com/Vikaspogu/helm-charts/releases/download/common-1.0.2/common-1.0.2.tgz
+    version: 1.0.2
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2021-01-25T14:48:19.774708297Z"
     description: A Helm chart for Kubernetes
     digest: a151dcb6bf95f6871382521204254b9ed6ecbfb9cca4b3f6a3712fe4cc475664
