@@ -1,0 +1,50 @@
+image:
+  repository: vikaspogu/node-ci-test
+  pullPolicy: IfNotPresent
+  tag: "0.0.1"
+
+env:
+  ENVIRONMENT: prod
+  MQTT_BROKER: vernemq.default.svc.cluster.local
+  OPEN_PIN: "12"
+  NOTIFICATION_TIME: "1800000"
+
+probes:
+  liveness:
+    custom: true
+    enabled: true
+    spec:
+      failureThreshold: 3
+      httpGet:
+        path: /health
+        port: http
+      initialDelaySeconds: 30
+      periodSeconds: 10
+      timeoutSeconds: 10
+
+  readiness:
+    custom: true
+    enabled: true
+    spec:
+      failureThreshold: 3
+      httpGet:
+        path: /health
+        port: http
+      initialDelaySeconds: 30
+      periodSeconds: 10
+      timeoutSeconds: 10
+      
+  startup:
+    enabled: false
+
+ingress:
+  enabled: false
+
+additionalVolumes:
+  - name: dev-gpiomem
+    hostPath:
+      path: /dev/gpiomem
+
+additionalVolumeMounts:
+  - mountPath: /dev/gpiomem
+    name: dev-gpiomem
