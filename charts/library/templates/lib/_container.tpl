@@ -43,6 +43,11 @@ The main container included in the controller.
   {{- end }}
   {{- if or .Values.env .Values.envTpl .Values.envValueFrom }}
   env:
+  {{- range $key, $value := .Values.envValueFrom }}
+  - name: {{ $key }}
+    valueFrom:
+      {{- $value | toYaml | nindent 6 }}
+  {{- end }}
   {{- range $key, $value := .Values.env }}
   - name: {{ $key }}
     value: {{ $value | quote }}
@@ -50,11 +55,6 @@ The main container included in the controller.
   {{- range $key, $value := .Values.envTpl }}
   - name: {{ $key }}
     value: {{ tpl $value $ | quote }}
-  {{- end }}
-  {{- range $key, $value := .Values.envValueFrom }}
-  - name: {{ $key }}
-    valueFrom:
-      {{- $value | toYaml | nindent 6 }}
   {{- end }}
   {{- end }}
   ports:
