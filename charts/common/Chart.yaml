@@ -2,7 +2,7 @@ apiVersion: v2
 name: common
 description: This is common chart for my home deployment
 type: application
-version: 1.0.4
+version: 1.1.0
 appVersion: 1.16.0
 dependencies:
 - name: library
