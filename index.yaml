@@ -3,6 +3,20 @@ entries:
   common:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2021-10-12T14:14:49.996266213Z"
+    dependencies:
+    - name: library
+      repository: file://../library
+      version: x.x.x
+    description: This is common chart for my home deployment
+    digest: c6c9893f47e7bef4f83e584983a054e7eb6d4b1b09c5e480b1987fbd587af00e
+    name: common
+    type: application
+    urls:
+    - https://github.com/Vikaspogu/helm-charts/releases/download/common-1.0.4/common-1.0.4.tgz
+    version: 1.0.4
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2021-10-12T13:38:10.674334261Z"
     dependencies:
     - name: library
@@ -107,6 +121,19 @@ entries:
     - https://github.com/Vikaspogu/helm-charts/releases/download/garage-opener-2.0.0/garage-opener-2.0.0.tgz
     version: 2.0.0
   library:
+  - apiVersion: v2
+    created: "2021-10-12T14:14:50.075203699Z"
+    description: Function library for helm charts
+    digest: 06d59c37c89c9ac08615a41b2d5d5a2b7fcdcdff08dcf2a3249478ee2ea4e673
+    home: https://github.com/Vikaspogu/helm-charts/charts/library
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - name: vikaspogu
+    name: library
+    type: library
+    urls:
+    - https://github.com/Vikaspogu/helm-charts/releases/download/library-1.0.2/library-1.0.2.tgz
+    version: 1.0.2
   - apiVersion: v2
     created: "2021-10-12T13:38:10.920558631Z"
     description: Function library for helm charts
