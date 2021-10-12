@@ -3,6 +3,20 @@ entries:
   common:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2021-10-12T13:38:10.674334261Z"
+    dependencies:
+    - name: library
+      repository: file://../library
+      version: x.x.x
+    description: This is common chart for my home deployment
+    digest: 46429093142e5e2eca597fb2ad7f9520affa688aaa460e0ecc2cfa28758d74e2
+    name: common
+    type: application
+    urls:
+    - https://github.com/Vikaspogu/helm-charts/releases/download/common-1.0.3/common-1.0.3.tgz
+    version: 1.0.3
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2021-09-14T13:48:40.734687347Z"
     dependencies:
     - name: library
@@ -36,6 +50,20 @@ entries:
     - https://github.com/Vikaspogu/helm-charts/releases/download/common-1.0.0/common-1.0.0.tgz
     version: 1.0.0
   garage-opener:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-10-12T13:38:10.795224955Z"
+    dependencies:
+    - name: library
+      repository: file://../library
+      version: x.x.x
+    description: This is garage-opener chart for my home
+    digest: cfca2a5fe29fc8d2ce2dd8a0f203bd64609963f9e20e68eb5b5a6b927e81d826
+    name: garage-opener
+    type: application
+    urls:
+    - https://github.com/Vikaspogu/helm-charts/releases/download/garage-opener-2.0.3/garage-opener-2.0.3.tgz
+    version: 2.0.3
   - apiVersion: v2
     appVersion: 1.16.0
     created: "2021-04-09T17:41:00.302927763Z"
@@ -80,6 +108,19 @@ entries:
     version: 2.0.0
   library:
   - apiVersion: v2
+    created: "2021-10-12T13:38:10.920558631Z"
+    description: Function library for helm charts
+    digest: d412d796863512dc8bde14007cd9bb8dff4911d14a7545a97b908d2d0d4e4ab9
+    home: https://github.com/Vikaspogu/helm-charts/charts/library
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - name: vikaspogu
+    name: library
+    type: library
+    urls:
+    - https://github.com/Vikaspogu/helm-charts/releases/download/library-1.0.1/library-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
     created: "2021-04-08T23:17:12.979663716Z"
     description: Function library for helm charts
     digest: 26e2af6d3e172294cf8059f502965ed4d2104789e137b94ee3d80c04a3df10e2
@@ -93,6 +134,20 @@ entries:
     - https://github.com/Vikaspogu/helm-charts/releases/download/library-1.0.0/library-1.0.0.tgz
     version: 1.0.0
   motioneye:
+  - apiVersion: v2
+    appVersion: 2.0.0
+    created: "2021-10-12T13:38:11.036952445Z"
+    dependencies:
+    - name: library
+      repository: file://../library
+      version: 1.x.x
+    description: A Helm chart to deploy motionEye in Kubernetes
+    digest: 8e593efe37bb1e8984d9d07f9553dfdd69ffac7c54229fd8f13a239cc695788b
+    name: motioneye
+    type: application
+    urls:
+    - https://github.com/Vikaspogu/helm-charts/releases/download/motioneye-2.0.2/motioneye-2.0.2.tgz
+    version: 2.0.2
   - apiVersion: v2
     appVersion: 2.0.0
     created: "2021-04-09T17:41:00.524517777Z"
@@ -142,6 +197,26 @@ entries:
     - https://github.com/Vikaspogu/helm-charts/releases/download/motioneye-1.0.0/motioneye-1.0.0.tgz
     version: 1.0.0
   schedule-pod-restart:
+  - apiVersion: v2
+    created: "2021-10-12T13:38:11.195184983Z"
+    dependencies:
+    - name: library
+      repository: file://../library
+      version: 1.x.x
+    description: A Helm chart for automatically restarting pods with labels based on a cron schedule.
+    digest: bd56413912821c7b75184e8280679baaed1d0499fd0f504a8172b39cfd6e32e3
+    keywords:
+    - Kubernetes
+    - Cronjob
+    maintainers:
+    - name: Vikas Pogu
+    name: schedule-pod-restart
+    sources:
+    - https://github.com/Vikaspogu/helm-charts/tree/master/charts/schedule-pod-restart
+    type: application
+    urls:
+    - https://github.com/Vikaspogu/helm-charts/releases/download/schedule-pod-restart-2.0.1/schedule-pod-restart-2.0.1.tgz
+    version: 2.0.1
   - apiVersion: v2
     created: "2021-04-09T17:41:00.631591061Z"
     dependencies:
