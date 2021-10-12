@@ -31,6 +31,16 @@ The main container included in the controller.
   lifecycle:
     {{- toYaml . | nindent 2 }}
   {{- end }}
+  {{- if or .Values.envFrom .Values.secret }}
+  envFrom:
+  {{- with .Values.envFrom }}
+    {{- toYaml . | nindent 2 }}
+  {{- end }}
+  {{- if or .Values.secret }}
+  - secretRef:
+      name: {{ include "library.names.fullname" . }}
+  {{- end }}
+  {{- end }}
   {{- if or .Values.env .Values.envTpl .Values.envValueFrom }}
   env:
   {{- range $key, $value := .Values.env }}
@@ -45,16 +55,6 @@ The main container included in the controller.
   - name: {{ $key }}
     valueFrom:
       {{- $value | toYaml | nindent 6 }}
-  {{- end }}
-  {{- end }}
-  {{- if or .Values.envFrom .Values.secret }}
-  envFrom:
-  {{- with .Values.envFrom }}
-    {{- toYaml . | nindent 2 }}
-  {{- end }}
-  {{- if or .Values.secret }}
-  - secretRef:
-      name: {{ include "library.names.fullname" . }}
   {{- end }}
   {{- end }}
   ports:

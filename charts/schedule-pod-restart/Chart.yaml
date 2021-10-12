@@ -2,7 +2,7 @@ apiVersion: v2
 name: schedule-pod-restart
 description: A Helm chart for automatically restarting pods with labels based on a cron schedule.
 type: application
-version: 2.0.0
+version: 2.0.1
 sources:
   - https://github.com/Vikaspogu/helm-charts/tree/master/charts/schedule-pod-restart
 maintainers:
