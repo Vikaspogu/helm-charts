@@ -3,6 +3,20 @@ entries:
   common:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2021-10-12T14:23:24.988592158Z"
+    dependencies:
+    - name: library
+      repository: file://../library
+      version: x.x.x
+    description: This is common chart for my home deployment
+    digest: 5239a8d9112b8f4f2edcfa3977ff7eee0173c86ab4437300e12ff2497a31c725
+    name: common
+    type: application
+    urls:
+    - https://github.com/Vikaspogu/helm-charts/releases/download/common-1.1.0/common-1.1.0.tgz
+    version: 1.1.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2021-10-12T14:14:49.996266213Z"
     dependencies:
     - name: library
